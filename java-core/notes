@@ -1,0 +1,165 @@
+JAVA - 
+
+JVM
+WORA
+
+Java was made in 1985 by Sun Enterprises
+Bought by Oracle later
+
+# Part 1
+
+Java is an object oriented programming language
+Java is statically typed language
+everything around you is an object
+
+An object knows something
+an object does something
+
+Every object has some properties and behaviours
+
+Class is a blueprint 
+ class file is used to compile and
+
+Behaviours are done by methods 
+Properties are stored in attributes
+
+
+```java
+
+class Calc{
+    int a;
+
+    public int add(int n1, int n2){
+        int r = n1 + n2;
+        return r;
+    }
+}
+
+public class Demo{
+    public static void main(String args[]){
+        int num1 = 4;
+        int num2 = 5;
+        // int result = num1+ num2;
+        // System.err.println(result);        
+        Calc calculator = new Calc();
+        // Calc is the class
+        // calculator is the reference
+        // Constructor in java is different
+        int result = calculator.add(num1, num2);
+        System.err.println(result);
+
+    }
+}
+
+```java
+
+
+```java
+class Computer
+{
+    public void playMusic()
+    {
+        System.err.println("Music is playing....");
+    }
+
+    public String getMeAPen(int cost)
+    {
+        if(cost >= 10)
+            return "Pen";
+        
+        return "Nothing";
+    }
+}
+
+
+
+public class Demo
+{
+    public static void main(String a[])
+    {
+        Computer C = new Computer();
+        C.playMusic();
+        String str = C.getMeAPen(2);
+        System.err.println(str);
+    }
+}
+```java
+
+# Polymorphism
+
+## Method overloading
+```java
+class Calc{
+    int a;
+
+    public int add(int n1, int n2, int n3){
+        int r = n1 + n2+ n3;
+        return r;
+    }
+    public int add(int n1, int n2){
+        int r = n1 + n2;
+        return r;
+    }
+    public double add(double n1, int n2)
+    {
+        return n1+n2;
+    }
+}
+```java
+
+## Method overriding
+
+preference to your own methods over th extended methods
+
+```java
+class A
+{
+    public void show(){
+        System.out.println("in A show");
+    }
+
+    public void config(){
+        System.out.println("IN a config");
+    }
+}
+
+class B extends A{
+    public void show(){
+        System.out.println("In b show");
+    }
+}
+
+public class Demo{
+    public static void main(String args[]){
+        B obj = new B();
+        obj.show();
+        obj.config();
+    }
+}
+```
+# Input from user
+
+## Buffer Reader
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Demo {
+    public static void main(String args[]) throws IOException{
+        System.out.print("Enter a number: ");
+        // int num = System.in.read();
+        
+        InputStreamReader in =  new InputStreamReader(System.in);
+        BufferedReader bf = new BufferedReader(in);
+        int num = Integer.parseInt( bf.readLine());
+        System.out.println(num);
+        
+        bf.close();
+    }
+}
+```
+
+## Using scaner
+
